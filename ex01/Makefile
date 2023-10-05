@@ -6,7 +6,7 @@
 #    By: juan-aga <juan-aga@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/01 11:56:44 by juan-aga          #+#    #+#              #
-#    Updated: 2023/10/05 18:47:28 by juan-aga         ###   ########.fr        #
+#    Updated: 2023/10/05 22:15:23 by juan-aga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		=	fixedPoint
 
 CC			=	c++
 
-CFLAGS		=	-Wall -Werror -Wextra -std=c++98 -D DBUG=$(DEBUG) $(INCLUDES)
+CFLAGS		=	-Wall -Werror -Wextra -std=c++98 -D DEBUG=$(DEBUG) $(INCLUDES)
 
 RM			=	rm -rf
 
