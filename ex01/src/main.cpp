@@ -20,7 +20,7 @@ int main( void )
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
-	return 0;
+//	return 0;
 	
 /*	Fixed a;
 	Fixed b( a );
@@ -28,18 +28,21 @@ int main( void )
 
 	c = b;
 
-	std::cout << a.getRawBits() << std::endl;
+*/	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;
 	std::cout << c.getRawBits() << std::endl;
+	std::cout << d.getRawBits() << std::endl;
 
 	a.setRawBits( 8 );
-	b = a;
-	c.setRawBits (42);
+//	b = a;
+//	c.setRawBits(42);
+//	d.setRawBits(4222);
 
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;
 	std::cout << c.getRawBits() << std::endl;
+	std::cout << d.getRawBits() << std::endl;
 
 
-	return 0;*/
+	return 0;
 }
