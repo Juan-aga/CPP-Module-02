@@ -17,12 +17,20 @@ public:
 	Fixed( Fixed const & src );
 	~Fixed( void );
 
-	Fixed &	operator=( Fixed const & rhs );
 
 	int		getRawBits( void ) const;
 	void	setRawBits( int const raw );
 	float	toFloat( void ) const;
 	int		toInt( void ) const;
+
+	Fixed &	operator=( Fixed const & rhs );
+
+	bool	operator>( Fixed const & rhs );
+	bool	operator<( Fixed const & rhs );
+	bool	operator>=( Fixed const & rhs );
+	bool	operator<=( Fixed const & rhs );
+	bool	operator==( Fixed const & rhs );
+	bool	operator!=( Fixed const & rhs );
 };
 
 std::ostream &	operator<<( std::ostream & o, Fixed const & i );

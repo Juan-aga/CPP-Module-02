@@ -31,16 +31,6 @@ Fixed::~Fixed( void )
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed &	Fixed::operator=( Fixed const & rhs)
-{
-	std::cout << "Copy assignment operator called" << std::endl;
-
-	if ( this != &rhs )
-		this->_raw = rhs.getRawBits();
-
-	return *this;
-}
-
 int		Fixed::getRawBits( void ) const
 {
 	if (DEBUG)
@@ -74,6 +64,46 @@ int		Fixed::toInt( void ) const
 		std::cerr << "toInt member function called" << std::endl;
 
 	return _raw >> _bits;
+}
+
+Fixed &	Fixed::operator=( Fixed const & rhs)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+
+	if ( this != &rhs )
+		this->_raw = rhs.getRawBits();
+
+	return *this;
+}
+
+bool	Fixed::operator>( Fixed const & rhs )
+{
+	return (this->getRawBits() > rhs.getRawBits());
+}
+
+bool	Fixed::operator<( Fixed const & rhs )
+{
+	return (this->getRawBits() < rhs.getRawBits());
+}
+
+bool	Fixed::operator>=( Fixed const & rhs )
+{
+	return (this->getRawBits() >= rhs.getRawBits());
+}
+
+bool	Fixed::operator<=( Fixed const & rhs )
+{
+	return (this->getRawBits() <= rhs.getRawBits());
+}
+
+bool	Fixed::operator==( Fixed const & rhs )
+{
+	return (this->getRawBits() == rhs.getRawBits());
+}
+
+bool	Fixed::operator!=( Fixed const & rhs )
+{
+	return (this->getRawBits() != rhs.getRawBits());
 }
 
 std::ostream &	operator<<( std::ostream & o, Fixed const & i )
