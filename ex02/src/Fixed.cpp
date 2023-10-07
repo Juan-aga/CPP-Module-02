@@ -71,6 +71,34 @@ int		Fixed::toInt( void ) const
 	return _raw >> _bits;
 }
 
+Fixed &	Fixed::min( Fixed & f1, Fixed & f2 )
+{
+	if (f2 >= f1)
+		return f1;
+	return f2;
+}
+
+const Fixed &	Fixed::min( Fixed const & f1, Fixed const & f2 )
+{
+	if (f2 >= f1)
+		return f1;
+	return f2;
+}
+
+Fixed &	Fixed::max( Fixed & f1, Fixed & f2 )
+{
+	if (f1 >= f2)
+		return f1;
+	return f2;
+}
+
+const Fixed &	Fixed::max( Fixed const & f1, Fixed const & f2 )
+{
+	if (f1 >= f2)
+		return f1;
+	return f2;
+}
+
 Fixed &	Fixed::operator=( Fixed const & rhs)
 {
 	if (DEBUG)
