@@ -149,6 +149,20 @@ Fixed	Fixed::operator++( int )
 	return tmp;
 }
 
+Fixed	Fixed::operator--( void )
+{
+	this->_raw--;
+	return *this;
+}
+
+Fixed	Fixed::operator--( int )
+{
+	Fixed	tmp(*this);
+
+	this->_raw--;
+	return tmp;
+}
+
 bool	Fixed::operator>( Fixed const & rhs ) const
 {
 	return (this->getRawBits() > rhs.getRawBits());

@@ -38,6 +38,8 @@ public:
 
 	Fixed					operator++( void );
 	Fixed					operator++( int );
+	Fixed					operator--( void );
+	Fixed					operator--( int );
 
 	bool					operator>( Fixed const & rhs ) const;
 	bool					operator<( Fixed const & rhs ) const;
