@@ -99,6 +99,11 @@ Fixed	Fixed::operator*( Fixed const & rhs) const
 
 Fixed	Fixed::operator/( Fixed const & rhs) const
 {
+	if (rhs._raw == 0)
+	{
+		std::cerr << "Error: Zero division." << std::endl;
+		return 0;
+	}
 	return Fixed(this->toFloat() / rhs.toFloat());
 }
 
