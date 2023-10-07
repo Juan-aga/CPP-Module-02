@@ -17,7 +17,6 @@ public:
 	Fixed( Fixed const & src );
 	~Fixed( void );
 
-
 	int						getRawBits( void ) const;
 	void					setRawBits( int const raw );
 	float					toFloat( void ) const;
@@ -27,7 +26,6 @@ public:
 	static const Fixed &	min( Fixed const & f1, Fixed const & f2);
 	static Fixed &			max( Fixed & f1, Fixed & f2);
 	static const Fixed &	max( Fixed const & f1, Fixed const & f2);
-
 
 	Fixed &					operator=( Fixed const & rhs );
 
