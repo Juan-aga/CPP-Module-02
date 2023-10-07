@@ -68,7 +68,8 @@ int		Fixed::toInt( void ) const
 
 Fixed &	Fixed::operator=( Fixed const & rhs)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	if (DEBUG)
+		std::cout << "Copy assignment operator called" << std::endl;
 
 	if ( this != &rhs )
 		this->_raw = rhs.getRawBits();
@@ -76,32 +77,52 @@ Fixed &	Fixed::operator=( Fixed const & rhs)
 	return *this;
 }
 
-bool	Fixed::operator>( Fixed const & rhs )
+Fixed	Fixed::operator+( Fixed const & rhs) const
+{
+	return Fixed(this->_raw + rhs._raw);
+}
+
+Fixed	Fixed::operator-( Fixed const & rhs) const
+{
+	return Fixed(this->_raw - rhs._raw);
+}
+
+Fixed	Fixed::operator*( Fixed const & rhs) const
+{
+	return Fixed(this->_raw * rhs._raw);
+}
+
+Fixed	Fixed::operator/( Fixed const & rhs) const
+{
+	return Fixed(this->_raw / rhs._raw);
+}
+
+bool	Fixed::operator>( Fixed const & rhs ) const
 {
 	return (this->getRawBits() > rhs.getRawBits());
 }
 
-bool	Fixed::operator<( Fixed const & rhs )
+bool	Fixed::operator<( Fixed const & rhs ) const
 {
 	return (this->getRawBits() < rhs.getRawBits());
 }
 
-bool	Fixed::operator>=( Fixed const & rhs )
+bool	Fixed::operator>=( Fixed const & rhs ) const
 {
 	return (this->getRawBits() >= rhs.getRawBits());
 }
 
-bool	Fixed::operator<=( Fixed const & rhs )
+bool	Fixed::operator<=( Fixed const & rhs ) const
 {
 	return (this->getRawBits() <= rhs.getRawBits());
 }
 
-bool	Fixed::operator==( Fixed const & rhs )
+bool	Fixed::operator==( Fixed const & rhs ) const
 {
 	return (this->getRawBits() == rhs.getRawBits());
 }
 
-bool	Fixed::operator!=( Fixed const & rhs )
+bool	Fixed::operator!=( Fixed const & rhs ) const
 {
 	return (this->getRawBits() != rhs.getRawBits());
 }
