@@ -58,7 +58,7 @@ float	Fixed::toFloat( void ) const
 
 	if (DEBUG)
 		std::cerr << "toFloat member function called" << std::endl;
-	result = static_cast<float>(_raw) / static_cast<float>(1 << _bits);
+	result = _raw / (float)(1 << _bits);
 	
 	return result;
 }
@@ -94,12 +94,12 @@ Fixed	Fixed::operator-( Fixed const & rhs) const
 
 Fixed	Fixed::operator*( Fixed const & rhs) const
 {
-	return Fixed(this->_raw * rhs._raw);
+	return Fixed(this->toFloat() * rhs.toFloat());
 }
 
 Fixed	Fixed::operator/( Fixed const & rhs) const
 {
-	return Fixed(this->_raw / rhs._raw);
+	return Fixed(this->toFloat() / rhs.toFloat());
 }
 
 Fixed	Fixed::operator++( void )
