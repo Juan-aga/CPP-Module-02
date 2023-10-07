@@ -4,22 +4,26 @@
 
 Fixed::Fixed( void ) : _raw( 0 << _bits)
 {
-	std::cout << "Default constructor called" << std::endl;
+	if (DEBUG)
+		std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed( int num) : _raw( num << _bits)
 {
-	std::cout << "Int constructor called" << std::endl;
+	if (DEBUG)
+		std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed( const float num ) : _raw( roundf(num * (1 << _bits)) )
 {
-	std::cout << "Float constructor called" << std::endl;
+	if (DEBUG)
+		std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed( Fixed const & src )
 {
-	std::cout << "Copy constructor called" << std::endl;
+	if (DEBUG)
+		std::cout << "Copy constructor called" << std::endl;
 
 	*this = src;
 
@@ -28,7 +32,8 @@ Fixed::Fixed( Fixed const & src )
 
 Fixed::~Fixed( void )
 {
-	std::cout << "Destructor called" << std::endl;
+	if (DEBUG)
+		std::cout << "Destructor called" << std::endl;
 }
 
 int		Fixed::getRawBits( void ) const
