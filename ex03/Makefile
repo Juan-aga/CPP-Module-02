@@ -6,7 +6,7 @@
 #    By: juan-aga <juan-aga@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/01 11:56:44 by juan-aga          #+#    #+#              #
-#    Updated: 2023/10/05 22:15:23 by juan-aga         ###   ########.fr        #
+#    Updated: 2023/10/13 12:03:44 by juan-aga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRC_DIR		=	src/
 OBJ_DIR		=	obj/
 
 F_SRC		=	main.cpp	\
-				Fixed.cpp
+				Fixed.cpp	\
+				Point.cpp
 
 SRC			=	${addprefix $(SRC_DIR), $(F_SRC)}
 
@@ -31,7 +32,8 @@ OBJ			=	${patsubst $(SRC_DIR)%.cpp, $(OBJ_DIR)%.opp, $(SRC)}
 
 INCLUDES	=	-I./inc/
 
-HEADERS		=	inc/Fixed.hpp
+HEADERS		=	inc/Fixed.hpp	\
+				inc/Point.hpp
 
 ifdef DEBUG
 	DEBUG	=	1
