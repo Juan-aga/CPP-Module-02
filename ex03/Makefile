@@ -6,7 +6,7 @@
 #    By: juan-aga <juan-aga@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/01 11:56:44 by juan-aga          #+#    #+#              #
-#    Updated: 2023/10/13 12:03:44 by juan-aga         ###   ########.fr        #
+#    Updated: 2023/10/14 14:18:05 by juan-aga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ OBJ_DIR		=	obj/
 
 F_SRC		=	main.cpp	\
 				Fixed.cpp	\
-				Point.cpp
+				Point.cpp	\
+				bsp.cpp
 
 SRC			=	${addprefix $(SRC_DIR), $(F_SRC)}
 
