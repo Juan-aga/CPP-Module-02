@@ -1,45 +1,27 @@
 #include <iostream>
-//#include "Fixed.hpp"
+#include "Fixed.hpp"
 #include "Point.hpp"
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 int main( void )
 {
-/*	Fixed a, c;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Point a(-5.0f, -2.0f);
+	Point b(2.0f, 6.0f);
+	Point c(3.0f, -3.0f);
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
+	Point point(1.0f, 1.0f);
 
-	std::cout << --a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a-- << std::endl;
-	std::cout << a << std::endl;
+	std::cout << "Dentro: ";
+	std::cout << bsp(a, b, c, point) << std::endl;
 
+	point = Point(-5.0f, -2.0f);
+	std::cout << "Vertice: ";
+	std::cout << bsp(a, b, c, point) << std::endl;
 
-	std::cout << b << std::endl;
-	std::cout << b / c << std::endl;
-	Fixed d (b - b);
-	if (d == c)
-		std::cout << "d and c equal." << std::endl;
-
-	std::cout << Fixed::max( a, b ) << std::endl;
-	std::cout << Fixed::min( a, b ) << std::endl;
+	point = Point(-6.0f, -2.0f);
+	std::cout << "fuera: ";
+	std::cout << bsp(a, b, c, point) << std::endl;
 
 	return 0;
-*/
-
-	Point  a;
-	Point b(3.4f, 0.5f);
-	Point const c = b;
-
-	std::cout << "a es: " << a << std::endl;
-	std::cout << "b es: " << b << std::endl;
-	std::cout << "c es: " << c << std::endl;
-
-	a = c;
-	std::cout << "a = c es: " << a << std::endl;
-	c = b;
 }
