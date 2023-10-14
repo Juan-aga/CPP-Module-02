@@ -9,11 +9,13 @@ public:
 	Point( void );
 	Point( float const x, float const y );
 	Point( Point const & p );
+	Point( Fixed const x, Fixed const y );
 	~Point( void );
 
 	std::pair<Fixed, Fixed>	getValue( void ) const;
 
 	Point & 			operator=( Point const & p );
+	Point	 			operator-( Point const & p ) const;
 
 private:
 	Fixed const	_x;

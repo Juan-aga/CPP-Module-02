@@ -13,6 +13,10 @@ Point::Point( Point const & p)
 	*this = p;
 }
 
+Point::Point( Fixed const x, Fixed const y ) : _x(x), _y(y)
+{
+}
+
 Point::~Point( void )
 {
 }
@@ -26,16 +30,15 @@ Point & 			Point::operator=( Point const & p )
 {
 	if (this != &p)
 	{
-		std::pair<Fixed, Fixed> values = p.getValue();
-//		const_cast<Fixed&>(this->_x) = Fixed(values.first.toFloat());
-		const_cast<Fixed&>(this->_x) = values.first;
-		const_cast<Fixed&>(this->_y) = values.second;
-
-//		this->_x = p._x;
-//		*this->_x.setRawBits(values.first.getRawBits());
-//		this->_y = values.second;
+		const_cast<Fixed&>(this->_x) = p._x;
+		const_cast<Fixed&>(this->_y) = p._y;
 	}
 	return *this;
+}
+
+Point				Point::operator-( Point const & p ) const
+{
+	return Point( (this->_x - p._x), (this->_y - p._y) );
 }
 
 std::ostream &	operator<<(std::ostream & o, Point const & p)
