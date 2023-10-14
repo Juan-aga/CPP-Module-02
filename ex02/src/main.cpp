@@ -17,10 +17,14 @@ int main( void )
 	std::cout << a-- << std::endl;
 	std::cout << a << std::endl;
 
-
-	std::cout << b << std::endl;
+	c = ( 0.5f );
 	std::cout << b / c << std::endl;
-	Fixed d (b - b);
+	std::cout << "b es: " << b << std::endl;
+	std::cout << "c es: " << c << std::endl;
+	Fixed d(b - c);
+	std::cout << " b - c es: " << d << std::endl;
+	d = (b + c);
+	std::cout << " b + c es: " << d << std::endl;
 	if (d == c)
 		std::cout << "d and c equal." << std::endl;
 

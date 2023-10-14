@@ -112,12 +112,12 @@ Fixed &	Fixed::operator=( Fixed const & rhs)
 
 Fixed	Fixed::operator+( Fixed const & rhs) const
 {
-	return Fixed(this->_raw + rhs._raw);
+	return Fixed(this->toFloat() + rhs.toFloat());
 }
 
 Fixed	Fixed::operator-( Fixed const & rhs) const
 {
-	return Fixed(this->_raw - rhs._raw);
+	return Fixed(this->toFloat() - rhs.toFloat());
 }
 
 Fixed	Fixed::operator*( Fixed const & rhs) const
